@@ -35,3 +35,40 @@ class HistoryTests(unittest.TestCase):
         self.assertEqual(vol[2],0)
         self.assertEqual(corr[2,2],1)
 
+
+    def test_incomplete_current_month(self):
+        f=fixture(13)
+        f.loc[12,'date']=pd.Timestamp.now().to_period('M').to_timestamp()
+        with self.assertRaisesRegex(ValueError,'Incomplete'):
+            validate_history(f)
+
+    def test_baseline_no_lookahead(self):
+        f=fixture()
+        first=backtest(validate_history(f),Deal()).iloc[0]
+        f.loc[24:,COLS]*=4
+        altered=backtest(validate_history(f),Deal()).iloc[0]
+        self.assertEqual(first.var_irr,altered.var_irr)
+        self.assertEqual(first.historical_var_irr,altered.historical_var_irr)
+        self.assertNotEqual(first.realized_loss_irr,altered.realized_loss_irr)
+
+    def test_invalid_backtest_parameters(self):
+        for train,confidence in [(12,.95),(24,.5),(24,1.)]:
+            with self.assertRaises(ValueError):
+                backtest(validate_history(fixture()),Deal(),train=train,confidence=confidence)
+
+    def test_summary_perfect_coverage(self):
+        from coffee_risk.history import summarize_backtest
+        bt=pd.DataFrame({'breach':[False]*10,'historical_breach':[True]*10,
+                         'quantile_loss_irr':[2.]*10,'historical_quantile_loss_irr':[3.]*10})
+        summary=summarize_backtest(bt)
+        self.assertEqual(summary['models']['gbm']['breaches'],0)
+        self.assertAlmostEqual(summary['models']['historical']['breach_rate'],1.)
+        self.assertGreater(summary['models']['gbm']['wilson_95'][1],0)
+        self.assertEqual(summary['models']['gbm']['mean_quantile_loss_irr'],2.)
+
+    def test_pinball_loss_hand_calculation(self):
+        bt=backtest(validate_history(fixture()),Deal())
+        for row in bt.itertuples():
+            error=row.realized_loss_irr-row.var_irr
+            expected=.95*error if error>=0 else -.05*error
+            self.assertAlmostEqual(row.quantile_loss_irr,expected,delta=max(1e-5,abs(expected)*1e-12))
