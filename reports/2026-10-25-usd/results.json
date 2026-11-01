@@ -1,0 +1,206 @@
+{
+  "started_at": "2026-10-25T19:15:40.791123+00:00",
+  "status": "success",
+  "receipts": [
+    {
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCOFFOTMUSDM",
+      "retrieved_at": "2026-10-25T19:15:41.254270+00:00",
+      "sha256": "2583f2aee667c65478a49b0cc3fa5926e35169b74e13b15dc83abd1efda9c089",
+      "bytes": 12451
+    },
+    {
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCOFFROBUSDM",
+      "retrieved_at": "2026-10-25T19:15:41.586034+00:00",
+      "sha256": "418297aff75e04ea3c8f19da765b2799cc821727b015a9196d6648d8fe313de1",
+      "bytes": 12246
+    }
+  ],
+  "evaluations": {
+    "train24_q0.9": {
+      "origins": 32,
+      "nominal_breach_rate": 0.09999999999999998,
+      "models": {
+        "gbm": {
+          "breaches": 10,
+          "breach_rate": 0.3125,
+          "wilson_95": [
+            0.17952541633609734,
+            0.4856667830095541
+          ],
+          "mean_quantile_loss_usd": 1720.0996417387964
+        },
+        "historical": {
+          "breaches": 7,
+          "breach_rate": 0.21875,
+          "wilson_95": [
+            0.11023836252604186,
+            0.3875499364924353
+          ],
+          "mean_quantile_loss_usd": 1881.538272942722
+        }
+      }
+    },
+    "train24_q0.95": {
+      "origins": 32,
+      "nominal_breach_rate": 0.050000000000000044,
+      "models": {
+        "gbm": {
+          "breaches": 6,
+          "breach_rate": 0.1875,
+          "wilson_95": [
+            0.08889544689565954,
+            0.3530915520137596
+          ],
+          "mean_quantile_loss_usd": 839.8044436878129
+        },
+        "historical": {
+          "breaches": 6,
+          "breach_rate": 0.1875,
+          "wilson_95": [
+            0.08889544689565954,
+            0.3530915520137596
+          ],
+          "mean_quantile_loss_usd": 1181.1619523451814
+        }
+      }
+    },
+    "train24_q0.99": {
+      "origins": 32,
+      "nominal_breach_rate": 0.010000000000000009,
+      "models": {
+        "gbm": {
+          "breaches": 0,
+          "breach_rate": 0.0,
+          "wilson_95": [
+            0.0,
+            0.1071791982550706
+          ],
+          "mean_quantile_loss_usd": 183.61105035911035
+        },
+        "historical": {
+          "breaches": 5,
+          "breach_rate": 0.15625,
+          "wilson_95": [
+            0.0686442028250571,
+            0.3175414959753039
+          ],
+          "mean_quantile_loss_usd": 474.0618483913918
+        }
+      }
+    },
+    "train36_q0.9": {
+      "origins": 28,
+      "nominal_breach_rate": 0.09999999999999998,
+      "models": {
+        "gbm": {
+          "breaches": 10,
+          "breach_rate": 0.35714285714285715,
+          "wilson_95": [
+            0.2070582950773768,
+            0.5416969348557219
+          ],
+          "mean_quantile_loss_usd": 1998.367335953072
+        },
+        "historical": {
+          "breaches": 5,
+          "breach_rate": 0.17857142857142858,
+          "wilson_95": [
+            0.07878501945604277,
+            0.35591424789342946
+          ],
+          "mean_quantile_loss_usd": 1920.5076174074973
+        }
+      }
+    },
+    "train36_q0.95": {
+      "origins": 28,
+      "nominal_breach_rate": 0.050000000000000044,
+      "models": {
+        "gbm": {
+          "breaches": 6,
+          "breach_rate": 0.21428571428571427,
+          "wilson_95": [
+            0.1021246033289788,
+            0.3953858565372187
+          ],
+          "mean_quantile_loss_usd": 1000.8849990980135
+        },
+        "historical": {
+          "breaches": 5,
+          "breach_rate": 0.17857142857142858,
+          "wilson_95": [
+            0.07878501945604277,
+            0.35591424789342946
+          ],
+          "mean_quantile_loss_usd": 1170.216270007137
+        }
+      }
+    },
+    "train36_q0.99": {
+      "origins": 28,
+      "nominal_breach_rate": 0.010000000000000009,
+      "models": {
+        "gbm": {
+          "breaches": 0,
+          "breach_rate": 0.0,
+          "wilson_95": [
+            1.3877787807814457e-17,
+            0.12064330476584563
+          ],
+          "mean_quantile_loss_usd": 192.67813831004293
+        },
+        "historical": {
+          "breaches": 3,
+          "breach_rate": 0.10714285714285714,
+          "wilson_95": [
+            0.03711836682929999,
+            0.27195851548672156
+          ],
+          "mean_quantile_loss_usd": 374.3839313936634
+        }
+      }
+    }
+  },
+  "cost_unit": "USD",
+  "scope": "Coffee purchase benchmark only; 20,000 kg, 60/40 blend; no FX or logistics",
+  "months": 120,
+  "first": "2016-10-01",
+  "last": "2026-09-01",
+  "sources": {
+    "arabica_usd_kg": {
+      "source": "FRED / IMF PCOFFOTMUSDM",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCOFFOTMUSDM",
+      "observation_date": "2026-09-01",
+      "retrieved_at": "2026-10-25T19:15:41.265562+00:00",
+      "unit": "USD/kg",
+      "kind": "Monthly period average",
+      "value": 7.277942192059024,
+      "sha256": "2583f2aee667c65478a49b0cc3fa5926e35169b74e13b15dc83abd1efda9c089",
+      "status": "Provider retrieved; not an executable live quote"
+    },
+    "robusta_usd_kg": {
+      "source": "FRED / IMF PCOFFROBUSDM",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCOFFROBUSDM",
+      "observation_date": "2026-09-01",
+      "retrieved_at": "2026-10-25T19:15:41.589790+00:00",
+      "unit": "USD/kg",
+      "kind": "Monthly period average",
+      "value": 3.692900364641118,
+      "sha256": "418297aff75e04ea3c8f19da765b2799cc821727b015a9196d6648d8fe313de1",
+      "status": "Provider retrieved; not an executable live quote"
+    }
+  },
+  "annual_volatility": [
+    0.21147997448346367,
+    0.2011150310827795,
+    0.0
+  ],
+  "caveats": [
+    "USD-only mode omits FX risk; reference mode is not Iranian settlement FX.",
+    "Revised monthly averages, not publication-time vintages.",
+    "Deal quantity, fees and selling price are illustrative, not verified transactions.",
+    "Rolling training windows share observations; Wilson intervals are descriptive.",
+    "Historical baseline uses overlapping training changes; small tail samples limit conclusions.",
+    "No raw provider history redistributed."
+  ]
+}

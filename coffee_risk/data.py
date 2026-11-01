@@ -84,3 +84,19 @@ def fetch_joint_history(years=5):
     if combined.empty: raise ValueError('No common historical months')
     return validate_history(combined),metas
 
+
+def fetch_coffee_history(years=10):
+    """Two real coffee series and a USD unit identity, never a manufactured FX history."""
+    from .history import validate_history
+    if years not in (2,3,5,10):raise ValueError('Unsupported history range')
+    frames=[];meta={}
+    for key in SERIES:
+        frame,meta[key]=fetch_coffee(key)
+        frames.append(frame.set_index('date').rename(columns={'value':key}))
+    combined=frames[0].join(frames[1],how='inner')
+    end=pd.Timestamp.now(tz='UTC').tz_localize(None).to_period('M').to_timestamp()
+    combined=combined.loc[combined.index<end].tail(years*12)
+    combined['usd_irr']=1.0
+    monthly=validate_history(combined.reset_index())
+    monthly.attrs['fx_mode']='excluded'
+    return monthly,meta

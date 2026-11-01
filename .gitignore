@@ -7,3 +7,7 @@ data/
 *.log
 .pytest_cache/
 
+
+private/
+forecast-registry/
+

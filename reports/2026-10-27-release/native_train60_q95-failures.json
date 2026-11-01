@@ -1,0 +1,93 @@
+[
+  {
+    "method": "gbm",
+    "origin": "2021-09-01",
+    "target": "2021-12-01",
+    "realized_loss": 12709.8620346893,
+    "var": 11355.478238678135,
+    "cvar": 14428.39626390971,
+    "excess_over_var": 1354.383796011165,
+    "arabica": 11320.907956092218,
+    "robusta": 1388.9540785970821,
+    "fx": 0.0,
+    "largest_positive_contributor": "arabica"
+  },
+  {
+    "method": "student_t",
+    "origin": "2021-09-01",
+    "target": "2021-12-01",
+    "realized_loss": 12709.8620346893,
+    "var": 10633.137386510243,
+    "cvar": 14429.107624527247,
+    "excess_over_var": 2076.724648179057,
+    "arabica": 11320.907956092218,
+    "robusta": 1388.9540785970821,
+    "fx": 0.0,
+    "largest_positive_contributor": "arabica"
+  },
+  {
+    "method": "gbm",
+    "origin": "2024-03-01",
+    "target": "2024-06-01",
+    "realized_loss": 17235.735458332565,
+    "var": 12010.604204278976,
+    "cvar": 15841.870809965094,
+    "excess_over_var": 5225.131254053589,
+    "arabica": 10447.706604941355,
+    "robusta": 6788.028853391209,
+    "fx": 0.0,
+    "largest_positive_contributor": "arabica"
+  },
+  {
+    "method": "block",
+    "origin": "2024-03-01",
+    "target": "2024-06-01",
+    "realized_loss": 17235.735458332565,
+    "var": 15347.884789057687,
+    "cvar": 17155.768498030207,
+    "excess_over_var": 1887.8506692748779,
+    "arabica": 10447.706604941355,
+    "robusta": 6788.028853391209,
+    "fx": 0.0,
+    "largest_positive_contributor": "arabica"
+  },
+  {
+    "method": "ewma_block",
+    "origin": "2024-03-01",
+    "target": "2024-06-01",
+    "realized_loss": 17235.735458332565,
+    "var": 16809.65473485268,
+    "cvar": 20539.682241541614,
+    "excess_over_var": 426.0807234798849,
+    "arabica": 10447.706604941355,
+    "robusta": 6788.028853391209,
+    "fx": 0.0,
+    "largest_positive_contributor": "arabica"
+  },
+  {
+    "method": "student_t",
+    "origin": "2024-03-01",
+    "target": "2024-06-01",
+    "realized_loss": 17235.735458332565,
+    "var": 11779.428056438843,
+    "cvar": 16174.489948515904,
+    "excess_over_var": 5456.307401893722,
+    "arabica": 10447.706604941355,
+    "robusta": 6788.028853391209,
+    "fx": 0.0,
+    "largest_positive_contributor": "arabica"
+  },
+  {
+    "method": "historical",
+    "origin": "2024-03-01",
+    "target": "2024-06-01",
+    "realized_loss": 17235.735458332565,
+    "var": 14641.432181498632,
+    "cvar": 17160.360179682022,
+    "excess_over_var": 2594.3032768339326,
+    "arabica": 10447.706604941355,
+    "robusta": 6788.028853391209,
+    "fx": 0.0,
+    "largest_positive_contributor": "arabica"
+  }
+]

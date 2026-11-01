@@ -1,0 +1,7 @@
+{
+  "checked_at": "2026-10-27T19:09:21.005386+00:00",
+  "url": "http://127.0.0.1:8501/_stcore/health",
+  "status": 200,
+  "body": "ok",
+  "scope": "HTTP health of existing local Streamlit process, not manual browser verification."
+}

@@ -4,3 +4,6 @@
 data
 __pycache__
 
+
+private/
+forecast-registry/

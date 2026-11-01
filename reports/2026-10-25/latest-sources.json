@@ -1,0 +1,36 @@
+{
+  "arabica_usd_kg": {
+    "status": "success",
+    "observations": 417,
+    "provenance": {
+      "source": "FRED / IMF PCOFFOTMUSDM",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCOFFOTMUSDM",
+      "observation_date": "2026-09-01",
+      "retrieved_at": "2026-10-25T19:14:57.401793+00:00",
+      "unit": "USD/kg",
+      "kind": "Monthly period average",
+      "value": 7.277942192059024,
+      "sha256": "2583f2aee667c65478a49b0cc3fa5926e35169b74e13b15dc83abd1efda9c089",
+      "status": "Provider retrieved; not an executable live quote"
+    }
+  },
+  "robusta_usd_kg": {
+    "status": "success",
+    "observations": 417,
+    "provenance": {
+      "source": "FRED / IMF PCOFFROBUSDM",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCOFFROBUSDM",
+      "observation_date": "2026-09-01",
+      "retrieved_at": "2026-10-25T19:14:57.403789+00:00",
+      "unit": "USD/kg",
+      "kind": "Monthly period average",
+      "value": 3.692900364641118,
+      "sha256": "418297aff75e04ea3c8f19da765b2799cc821727b015a9196d6648d8fe313de1",
+      "status": "Provider retrieved; not an executable live quote"
+    }
+  },
+  "usd_irr": {
+    "status": "failed",
+    "error": "Remote end closed connection without response"
+  }
+}

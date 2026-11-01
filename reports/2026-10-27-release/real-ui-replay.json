@@ -1,0 +1,121 @@
+{
+  "source": "Actual fetched FRED history; current user FX held fixed, commercial assumptions not invoiced",
+  "unit_switch_preserves_cost": true,
+  "engines": {
+    "gbm": {
+      "status": "pass",
+      "replay_exact": true,
+      "cost_toman_kg": 2447469.3861083817,
+      "risk_irr": {
+        "var_irr": 62507370554.170494,
+        "cvar_irr": 80393603940.12018
+      },
+      "metrics": {
+        "Robusta weight": "40%",
+        "Horizon": "3 months",
+        "Coffee purchase · USD": "116,879",
+        "Cost per sellable kg": "2,447,469 تومان",
+        "Potential contribution · entire shipment": "9,096,864,027 تومان",
+        "Gross contribution margin": "18.4%",
+        "Required net selling price / sellable kg": "3,059,337 تومان",
+        "Required list price before discount / sellable kg": "3,059,337 تومان",
+        "Cost-overrun VaR · entire shipment": "6,250,737,055 تومان",
+        "Cost-overrun CVaR · entire shipment": "8,039,360,394 تومان",
+        "Probability of negative margin": "1.0%",
+        "Selling price for 95% modeled cost coverage and target margin": "3,533,913 تومان"
+      }
+    },
+    "historical": {
+      "status": "pass",
+      "replay_exact": true,
+      "cost_toman_kg": 2447469.3861083817,
+      "risk_irr": {
+        "var_irr": 62684732698.90197,
+        "cvar_irr": 77622081553.49312
+      },
+      "metrics": {
+        "Robusta weight": "40%",
+        "Horizon": "3 months",
+        "Coffee purchase · USD": "116,879",
+        "Cost per sellable kg": "2,447,469 تومان",
+        "Potential contribution · entire shipment": "9,096,864,027 تومان",
+        "Gross contribution margin": "18.4%",
+        "Required net selling price / sellable kg": "3,059,337 تومان",
+        "Required list price before discount / sellable kg": "3,059,337 تومان",
+        "Cost-overrun VaR · entire shipment": "6,268,473,270 تومان",
+        "Cost-overrun CVaR · entire shipment": "7,762,208,155 تومان",
+        "Probability of negative margin": "1.2%",
+        "Selling price for 95% modeled cost coverage and target margin": "3,535,259 تومان"
+      }
+    },
+    "block": {
+      "status": "pass",
+      "replay_exact": true,
+      "cost_toman_kg": 2447469.3861083817,
+      "risk_irr": {
+        "var_irr": 62684732698.90197,
+        "cvar_irr": 77622081553.4931
+      },
+      "metrics": {
+        "Robusta weight": "40%",
+        "Horizon": "3 months",
+        "Coffee purchase · USD": "116,879",
+        "Cost per sellable kg": "2,447,469 تومان",
+        "Potential contribution · entire shipment": "9,096,864,027 تومان",
+        "Gross contribution margin": "18.4%",
+        "Required net selling price / sellable kg": "3,059,337 تومان",
+        "Required list price before discount / sellable kg": "3,059,337 تومان",
+        "Cost-overrun VaR · entire shipment": "6,268,473,270 تومان",
+        "Cost-overrun CVaR · entire shipment": "7,762,208,155 تومان",
+        "Probability of negative margin": "1.2%",
+        "Selling price for 95% modeled cost coverage and target margin": "3,535,259 تومان"
+      }
+    },
+    "ewma_block": {
+      "status": "pass",
+      "replay_exact": true,
+      "cost_toman_kg": 2447469.3861083817,
+      "risk_irr": {
+        "var_irr": 89593926855.41339,
+        "cvar_irr": 104309545787.47517
+      },
+      "metrics": {
+        "Robusta weight": "40%",
+        "Horizon": "3 months",
+        "Coffee purchase · USD": "116,879",
+        "Cost per sellable kg": "2,447,469 تومان",
+        "Potential contribution · entire shipment": "9,096,864,027 تومان",
+        "Gross contribution margin": "18.4%",
+        "Required net selling price / sellable kg": "3,059,337 تومان",
+        "Required list price before discount / sellable kg": "3,059,337 تومان",
+        "Cost-overrun VaR · entire shipment": "8,959,392,686 تومان",
+        "Cost-overrun CVaR · entire shipment": "10,430,954,579 تومان",
+        "Probability of negative margin": "4.4%",
+        "Selling price for 95% modeled cost coverage and target margin": "3,739,563 تومان"
+      }
+    },
+    "student_t": {
+      "status": "pass",
+      "replay_exact": true,
+      "cost_toman_kg": 2447469.3861083817,
+      "risk_irr": {
+        "var_irr": 61320548507.791145,
+        "cvar_irr": 83316757096.12996
+      },
+      "metrics": {
+        "Robusta weight": "40%",
+        "Horizon": "3 months",
+        "Coffee purchase · USD": "116,879",
+        "Cost per sellable kg": "2,447,469 تومان",
+        "Potential contribution · entire shipment": "9,096,864,027 تومان",
+        "Gross contribution margin": "18.4%",
+        "Required net selling price / sellable kg": "3,059,337 تومان",
+        "Required list price before discount / sellable kg": "3,059,337 تومان",
+        "Cost-overrun VaR · entire shipment": "6,132,054,851 تومان",
+        "Cost-overrun CVaR · entire shipment": "8,331,675,710 تومان",
+        "Probability of negative margin": "1.3%",
+        "Selling price for 95% modeled cost coverage and target margin": "3,524,902 تومان"
+      }
+    }
+  }
+}
