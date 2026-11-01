@@ -19,6 +19,13 @@ class Deal:
     coffee_unfixed: float = 1.
     fx_unfixed: float = 1.
 
+    roast_yield: float = 1.
+    roast_cost_irr_input_kg: float = 0.
+    packaging_irr_output_kg: float = 0.
+    selling_cost_irr_output_kg: float = 0.
+    discount_rate: float = 0.
+    sold_fraction: float = 1.
+
     def validate(self):
         if not all(np.isfinite(v) for v in asdict(self).values()):
             raise ValueError('All inputs must be finite')
@@ -26,9 +33,12 @@ class Deal:
             if getattr(self,k) <= 0: raise ValueError(k+' must be positive')
         for k in ('arabica_weight','insurance_rate','duty_rate','coffee_unfixed','fx_unfixed'):
             if not 0 <= getattr(self,k) <= 1: raise ValueError(k+' must be in [0,1]')
+        if not isinstance(self.months,(int,np.integer)) or isinstance(self.months,bool): raise ValueError('Horizon must be an integer number of months')
         if not 0 <= self.shrinkage < 1 or not 1 <= self.months <= 24:
             raise ValueError('Invalid shrinkage or horizon')
-        if min(self.freight_usd,self.local_cost_irr,self.finance_rate) < 0:
+        if not 0<self.roast_yield<=1 or not 0<=self.discount_rate<1 or not 0<=self.sold_fraction<=1:
+            raise ValueError('Invalid roasting yield, discount or sold fraction')
+        if min(self.freight_usd,self.local_cost_irr,self.finance_rate,self.roast_cost_irr_input_kg,self.packaging_irr_output_kg,self.selling_cost_irr_output_kg) < 0:
             raise ValueError('Costs cannot be negative')
 
 def economics(d, factors=(1.,1.,1.), logistics_factor=1.):
@@ -45,12 +55,26 @@ def economics(d, factors=(1.,1.,1.), logistics_factor=1.):
     cif = (purchase+d.freight_usd*logistics_factor)*(1+d.insurance_rate)
     landed = cif*fx*(1+d.duty_rate)+d.local_cost_irr*logistics_factor
     finance = landed*d.finance_rate*d.months/12
-    total = landed+finance
-    sellable = d.quantity_kg*(1-d.shrinkage)
-    revenue = sellable*d.sale_irr_kg
+    input_weight = d.quantity_kg*(1-d.shrinkage)
+    sellable = input_weight*d.roast_yield
+    roasting = input_weight*d.roast_cost_irr_input_kg
+    packaging = sellable*d.packaging_irr_output_kg
+    selling = sellable*d.selling_cost_irr_output_kg
+    total = landed+finance+roasting+packaging+selling
+    revenue = sellable*d.sale_irr_kg*(1-d.discount_rate)
     return dict(purchase_usd=purchase,total_irr=total,finance_irr=finance,
                 cost_irr_kg=total/sellable,profit_irr=revenue-total,
-                margin=(revenue-total)/revenue,revenue_irr=revenue)
+                margin=(revenue-total)/revenue,revenue_irr=revenue,
+                purchase_irr=purchase*fx,freight_irr=d.freight_usd*logistics_factor*fx,
+                insurance_irr=(purchase+d.freight_usd*logistics_factor)*d.insurance_rate*fx,
+                duty_irr=cif*fx*d.duty_rate,local_irr=d.local_cost_irr*logistics_factor,
+                roasting_irr=roasting,packaging_irr=packaging,selling_irr=selling,
+                sellable_kg=sellable,sold_kg=sellable*d.sold_fraction,
+                recognized_revenue_irr=revenue*d.sold_fraction,
+                allocated_cost_sold_irr=total*d.sold_fraction,
+                contribution_sold_irr=(revenue-total)*d.sold_fraction,
+                inventory_cost_irr=(total-selling)*(1-d.sold_fraction),
+                unincurred_selling_irr=selling*(1-d.sold_fraction))
 
 def blend(d):
     d.validate()
