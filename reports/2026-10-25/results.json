@@ -1,0 +1,7 @@
+{
+  "started_at": "2026-10-25T19:13:32.829844+00:00",
+  "status": "failed",
+  "receipts": [],
+  "evaluations": {},
+  "error": "RemoteDisconnected: Remote end closed connection without response"
+}
