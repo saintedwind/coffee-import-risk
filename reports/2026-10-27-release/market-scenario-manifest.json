@@ -1,0 +1,195 @@
+{
+  "schema": "coffee-evidence-1",
+  "documents": [],
+  "fields": [
+    {
+      "field": "quantity_kg",
+      "value": 20000,
+      "unit": "kg",
+      "status": "assumption",
+      "source": "Illustrative assumption; no supporting document",
+      "observed_date": "2026-10-27",
+      "document_id": null
+    },
+    {
+      "field": "arabica_weight",
+      "value": 0.6,
+      "unit": "fraction",
+      "status": "assumption",
+      "source": "Illustrative assumption; no supporting document",
+      "observed_date": "2026-10-27",
+      "document_id": null
+    },
+    {
+      "field": "arabica_usd_kg",
+      "value": 7.277942192059024,
+      "unit": "USD/kg",
+      "status": "public_listing",
+      "source": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCOFFOTMUSDM; monthly benchmark, not supplier offer",
+      "observed_date": "2026-09-01",
+      "document_id": null
+    },
+    {
+      "field": "robusta_usd_kg",
+      "value": 3.692900364641118,
+      "unit": "USD/kg",
+      "status": "public_listing",
+      "source": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCOFFROBUSDM; monthly benchmark, not supplier offer",
+      "observed_date": "2026-09-01",
+      "document_id": null
+    },
+    {
+      "field": "usd_irr",
+      "value": 2710000.0,
+      "unit": "IRR",
+      "status": "user_reported",
+      "source": "User-reported 271,000 toman/USD; not independently verified settlement",
+      "observed_date": "2026-10-27",
+      "document_id": null
+    },
+    {
+      "field": "freight_usd",
+      "value": 4000.0,
+      "unit": "USD",
+      "status": "assumption",
+      "source": "Illustrative assumption; no supporting document",
+      "observed_date": "2026-10-27",
+      "document_id": null
+    },
+    {
+      "field": "insurance_rate",
+      "value": 0.01,
+      "unit": "fraction",
+      "status": "assumption",
+      "source": "Illustrative assumption; no supporting document",
+      "observed_date": "2026-10-27",
+      "document_id": null
+    },
+    {
+      "field": "duty_rate",
+      "value": 0.05,
+      "unit": "fraction",
+      "status": "assumption",
+      "source": "Illustrative assumption; no supporting document",
+      "observed_date": "2026-10-27",
+      "document_id": null
+    },
+    {
+      "field": "local_cost_irr",
+      "value": 200000000.0,
+      "unit": "IRR",
+      "status": "assumption",
+      "source": "Illustrative assumption; no supporting document",
+      "observed_date": "2026-10-27",
+      "document_id": null
+    },
+    {
+      "field": "finance_rate",
+      "value": 0.24,
+      "unit": "fraction",
+      "status": "assumption",
+      "source": "Illustrative assumption; no supporting document",
+      "observed_date": "2026-10-27",
+      "document_id": null
+    },
+    {
+      "field": "shrinkage",
+      "value": 0.02,
+      "unit": "fraction",
+      "status": "assumption",
+      "source": "Illustrative assumption; no supporting document",
+      "observed_date": "2026-10-27",
+      "document_id": null
+    },
+    {
+      "field": "sale_irr_kg",
+      "value": 30000000.0,
+      "unit": "IRR",
+      "status": "assumption",
+      "source": "Illustrative assumption; no supporting document",
+      "observed_date": "2026-10-27",
+      "document_id": null
+    },
+    {
+      "field": "months",
+      "value": 3,
+      "unit": "months",
+      "status": "assumption",
+      "source": "Illustrative assumption; no supporting document",
+      "observed_date": "2026-10-27",
+      "document_id": null
+    },
+    {
+      "field": "coffee_unfixed",
+      "value": 1.0,
+      "unit": "fraction",
+      "status": "assumption",
+      "source": "Illustrative assumption; no supporting document",
+      "observed_date": "2026-10-27",
+      "document_id": null
+    },
+    {
+      "field": "fx_unfixed",
+      "value": 1.0,
+      "unit": "fraction",
+      "status": "assumption",
+      "source": "Illustrative assumption; no supporting document",
+      "observed_date": "2026-10-27",
+      "document_id": null
+    },
+    {
+      "field": "roast_yield",
+      "value": 0.84,
+      "unit": "fraction",
+      "status": "assumption",
+      "source": "Illustrative assumption; no supporting document",
+      "observed_date": "2026-10-27",
+      "document_id": null
+    },
+    {
+      "field": "roast_cost_irr_input_kg",
+      "value": 500000,
+      "unit": "IRR",
+      "status": "assumption",
+      "source": "Illustrative assumption; no supporting document",
+      "observed_date": "2026-10-27",
+      "document_id": null
+    },
+    {
+      "field": "packaging_irr_output_kg",
+      "value": 500000,
+      "unit": "IRR",
+      "status": "assumption",
+      "source": "Illustrative assumption; no supporting document",
+      "observed_date": "2026-10-27",
+      "document_id": null
+    },
+    {
+      "field": "selling_cost_irr_output_kg",
+      "value": 1000000,
+      "unit": "IRR",
+      "status": "assumption",
+      "source": "Illustrative assumption; no supporting document",
+      "observed_date": "2026-10-27",
+      "document_id": null
+    },
+    {
+      "field": "discount_rate",
+      "value": 0.0,
+      "unit": "fraction",
+      "status": "assumption",
+      "source": "Illustrative assumption; no supporting document",
+      "observed_date": "2026-10-27",
+      "document_id": null
+    },
+    {
+      "field": "sold_fraction",
+      "value": 1.0,
+      "unit": "fraction",
+      "status": "assumption",
+      "source": "Illustrative assumption; no supporting document",
+      "observed_date": "2026-10-27",
+      "document_id": null
+    }
+  ]
+}

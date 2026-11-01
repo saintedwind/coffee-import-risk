@@ -1,0 +1,1264 @@
+{
+  "evaluation_date_client": "2026-10-27",
+  "started_at": "2026-10-27T18:57:43.494159+00:00",
+  "receipts": [
+    {
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCOFFOTMUSDM",
+      "retrieved_at": "2026-10-27T18:57:44.346341+00:00",
+      "sha256": "2583f2aee667c65478a49b0cc3fa5926e35169b74e13b15dc83abd1efda9c089",
+      "bytes": 12451
+    },
+    {
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCOFFROBUSDM",
+      "retrieved_at": "2026-10-27T18:57:45.125398+00:00",
+      "sha256": "418297aff75e04ea3c8f19da765b2799cc821727b015a9196d6648d8fe313de1",
+      "bytes": 12246
+    }
+  ],
+  "status": "success",
+  "months": 120,
+  "first": "2016-10-01",
+  "last": "2026-09-01",
+  "sources": {
+    "arabica_usd_kg": {
+      "source": "FRED / IMF PCOFFOTMUSDM",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCOFFOTMUSDM",
+      "observation_date": "2026-09-01",
+      "retrieved_at": "2026-10-27T18:57:44.412395+00:00",
+      "unit": "USD/kg",
+      "kind": "Monthly period average",
+      "value": 7.277942192059024,
+      "sha256": "2583f2aee667c65478a49b0cc3fa5926e35169b74e13b15dc83abd1efda9c089",
+      "status": "Provider retrieved; not an executable live quote"
+    },
+    "robusta_usd_kg": {
+      "source": "FRED / IMF PCOFFROBUSDM",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCOFFROBUSDM",
+      "observation_date": "2026-09-01",
+      "retrieved_at": "2026-10-27T18:57:45.140393+00:00",
+      "unit": "USD/kg",
+      "kind": "Monthly period average",
+      "value": 3.692900364641118,
+      "sha256": "418297aff75e04ea3c8f19da765b2799cc821727b015a9196d6648d8fe313de1",
+      "status": "Provider retrieved; not an executable live quote"
+    }
+  },
+  "fx_inputs": {
+    "user": {
+      "irr_per_usd": 2710000.0,
+      "toman_per_usd": 271000,
+      "source": "User message; not executable verified FX"
+    },
+    "public": {
+      "irr_per_usd": 2695000.0,
+      "source": "https://www.tgju.org/profile/price_dollar_rl",
+      "status": "Public display inspected 2026-10-27; source time 19:59:58; not settlement quote"
+    }
+  },
+  "market_listings": [
+    {
+      "name": "Robusta Vietnam 1 kg roasted",
+      "price_toman_kg": 2487000,
+      "source": "https://amircano.com/product/قهوه-روبوستا-ویتنام-عمده-بسته-۱۰-کیلو/",
+      "stage": "roasted",
+      "channel": "retail",
+      "available": false,
+      "source_date": null
+    },
+    {
+      "name": "Arabica Brazil Santos 1 kg roasted",
+      "price_toman_kg": 5700000,
+      "source": "https://kaam.coffee/shop/so-brazil-santos-arabica",
+      "stage": "roasted",
+      "channel": "retail",
+      "available": "not independently confirmed",
+      "source_date": null
+    },
+    {
+      "name": "60% Arabica roasted 15 kg lot",
+      "price_toman_kg": 1125000,
+      "source": "https://eridocoffee.com/wholesale-coffee/",
+      "stage": "roasted",
+      "channel": "wholesale",
+      "available": "not independently confirmed",
+      "source_date": "1405/08/01"
+    }
+  ],
+  "assumptions": {
+    "quantity_kg": 20000,
+    "freight_usd": 4000,
+    "insurance_rate": 0.01,
+    "duty_rate": 0.05,
+    "finance_rate": 0.24,
+    "transit_loss": 0.02,
+    "months": 3,
+    "roast_yield": 0.84,
+    "roasting_toman_input_kg": 50000,
+    "packaging_toman_output_kg": 50000,
+    "distribution_toman_output_kg": 100000,
+    "target_margin": 0.2,
+    "status": "Illustrative commercial assumptions; no invoice or legal duty verification. No tuning to listing prices."
+  },
+  "scenarios": [
+    {
+      "label": "arabica",
+      "stage": "green",
+      "deal": {
+        "quantity_kg": 20000,
+        "arabica_weight": 1.0,
+        "arabica_usd_kg": 7.277942192059024,
+        "robusta_usd_kg": 3.692900364641118,
+        "usd_irr": 2710000.0,
+        "freight_usd": 4000.0,
+        "insurance_rate": 0.01,
+        "duty_rate": 0.05,
+        "local_cost_irr": 200000000.0,
+        "finance_rate": 0.24,
+        "shrinkage": 0.02,
+        "sale_irr_kg": 30000000.0,
+        "months": 3,
+        "coffee_unfixed": 1.0,
+        "fx_unfixed": 1.0,
+        "roast_yield": 1.0,
+        "roast_cost_irr_input_kg": 0.0,
+        "packaging_irr_output_kg": 0.0,
+        "selling_cost_irr_output_kg": 0.0,
+        "discount_rate": 0.0,
+        "sold_fraction": 1.0
+      },
+      "cost_toman_kg": 2325647.501401401,
+      "required_net_price_toman_kg": 2907059.3767517516,
+      "public_fx_cost_toman_kg": 2312780.9006518717,
+      "components": [
+        {
+          "component": "purchase_irr",
+          "total": 39446446680.959915,
+          "per_sellable_kg": 2012573.810253057,
+          "currency": "toman"
+        },
+        {
+          "component": "freight_irr",
+          "total": 1084000000.0,
+          "per_sellable_kg": 55306.1224489796,
+          "currency": "toman"
+        },
+        {
+          "component": "insurance_irr",
+          "total": 405304466.80959916,
+          "per_sellable_kg": 20678.799327020366,
+          "currency": "toman"
+        },
+        {
+          "component": "duty_irr",
+          "total": 2046787557.388476,
+          "per_sellable_kg": 104427.93660145285,
+          "currency": "toman"
+        },
+        {
+          "component": "local_irr",
+          "total": 20000000.0,
+          "per_sellable_kg": 1020.4081632653063,
+          "currency": "toman"
+        },
+        {
+          "component": "finance_irr",
+          "total": 2580152322.309479,
+          "per_sellable_kg": 131640.42460762648,
+          "currency": "toman"
+        },
+        {
+          "component": "roasting_irr",
+          "total": 0.0,
+          "per_sellable_kg": 0.0,
+          "currency": "toman"
+        },
+        {
+          "component": "packaging_irr",
+          "total": 0.0,
+          "per_sellable_kg": 0.0,
+          "currency": "toman"
+        },
+        {
+          "component": "selling_irr",
+          "total": 0.0,
+          "per_sellable_kg": 0.0,
+          "currency": "toman"
+        }
+      ],
+      "listing_gap_pct": null,
+      "scope": "Global green monthly benchmark converted to current FX plus assumed costs; not a supplier invoice or forecast of retail listing."
+    },
+    {
+      "label": "arabica",
+      "stage": "roasted",
+      "deal": {
+        "quantity_kg": 20000,
+        "arabica_weight": 1.0,
+        "arabica_usd_kg": 7.277942192059024,
+        "robusta_usd_kg": 3.692900364641118,
+        "usd_irr": 2710000.0,
+        "freight_usd": 4000.0,
+        "insurance_rate": 0.01,
+        "duty_rate": 0.05,
+        "local_cost_irr": 200000000.0,
+        "finance_rate": 0.24,
+        "shrinkage": 0.02,
+        "sale_irr_kg": 30000000.0,
+        "months": 3,
+        "coffee_unfixed": 1.0,
+        "fx_unfixed": 1.0,
+        "roast_yield": 0.84,
+        "roast_cost_irr_input_kg": 500000,
+        "packaging_irr_output_kg": 500000,
+        "selling_cost_irr_output_kg": 1000000,
+        "discount_rate": 0.0,
+        "sold_fraction": 1.0
+      },
+      "cost_toman_kg": 2978151.787382621,
+      "required_net_price_toman_kg": 3722689.7342282757,
+      "public_fx_cost_toman_kg": 2962834.4055379424,
+      "components": [
+        {
+          "component": "purchase_irr",
+          "total": 39446446680.959915,
+          "per_sellable_kg": 2395921.2026822106,
+          "currency": "toman"
+        },
+        {
+          "component": "freight_irr",
+          "total": 1084000000.0,
+          "per_sellable_kg": 65840.62196307094,
+          "currency": "toman"
+        },
+        {
+          "component": "insurance_irr",
+          "total": 405304466.80959916,
+          "per_sellable_kg": 24617.618246452817,
+          "currency": "toman"
+        },
+        {
+          "component": "duty_irr",
+          "total": 2046787557.388476,
+          "per_sellable_kg": 124318.97214458673,
+          "currency": "toman"
+        },
+        {
+          "component": "local_irr",
+          "total": 20000000.0,
+          "per_sellable_kg": 1214.7716229348882,
+          "currency": "toman"
+        },
+        {
+          "component": "finance_irr",
+          "total": 2580152322.309479,
+          "per_sellable_kg": 156714.79119955533,
+          "currency": "toman"
+        },
+        {
+          "component": "roasting_irr",
+          "total": 980000000.0,
+          "per_sellable_kg": 59523.80952380953,
+          "currency": "toman"
+        },
+        {
+          "component": "packaging_irr",
+          "total": 823200000.0,
+          "per_sellable_kg": 50000.0,
+          "currency": "toman"
+        },
+        {
+          "component": "selling_irr",
+          "total": 1646400000.0,
+          "per_sellable_kg": 100000.0,
+          "currency": "toman"
+        }
+      ],
+      "listing_gap_pct": -34.68965378546884,
+      "scope": "Global green monthly benchmark converted to current FX plus assumed costs; not a supplier invoice or forecast of retail listing."
+    },
+    {
+      "label": "robusta",
+      "stage": "green",
+      "deal": {
+        "quantity_kg": 20000,
+        "arabica_weight": 0.0,
+        "arabica_usd_kg": 7.277942192059024,
+        "robusta_usd_kg": 3.692900364641118,
+        "usd_irr": 2710000.0,
+        "freight_usd": 4000.0,
+        "insurance_rate": 0.01,
+        "duty_rate": 0.05,
+        "local_cost_irr": 200000000.0,
+        "finance_rate": 0.24,
+        "shrinkage": 0.02,
+        "sale_irr_kg": 30000000.0,
+        "months": 3,
+        "coffee_unfixed": 1.0,
+        "fx_unfixed": 1.0,
+        "roast_yield": 1.0,
+        "roast_cost_irr_input_kg": 0.0,
+        "packaging_irr_output_kg": 0.0,
+        "selling_cost_irr_output_kg": 0.0,
+        "discount_rate": 0.0,
+        "sold_fraction": 1.0
+      },
+      "cost_toman_kg": 1211214.4587254995,
+      "required_net_price_toman_kg": 1514018.0734068742,
+      "public_fx_cost_toman_kg": 1204516.306551667,
+      "components": [
+        {
+          "component": "purchase_irr",
+          "total": 20015519976.354862,
+          "per_sellable_kg": 1021199.9987936154,
+          "currency": "toman"
+        },
+        {
+          "component": "freight_irr",
+          "total": 1084000000.0,
+          "per_sellable_kg": 55306.1224489796,
+          "currency": "toman"
+        },
+        {
+          "component": "insurance_irr",
+          "total": 210995199.7635486,
+          "per_sellable_kg": 10765.06121242595,
+          "currency": "toman"
+        },
+        {
+          "component": "duty_irr",
+          "total": 1065525758.8059204,
+          "per_sellable_kg": 54363.55912275104,
+          "currency": "toman"
+        },
+        {
+          "component": "local_irr",
+          "total": 20000000.0,
+          "per_sellable_kg": 1020.4081632653063,
+          "currency": "toman"
+        },
+        {
+          "component": "finance_irr",
+          "total": 1343762456.0954597,
+          "per_sellable_kg": 68559.30898446223,
+          "currency": "toman"
+        },
+        {
+          "component": "roasting_irr",
+          "total": 0.0,
+          "per_sellable_kg": 0.0,
+          "currency": "toman"
+        },
+        {
+          "component": "packaging_irr",
+          "total": 0.0,
+          "per_sellable_kg": 0.0,
+          "currency": "toman"
+        },
+        {
+          "component": "selling_irr",
+          "total": 0.0,
+          "per_sellable_kg": 0.0,
+          "currency": "toman"
+        }
+      ],
+      "listing_gap_pct": null,
+      "scope": "Global green monthly benchmark converted to current FX plus assumed costs; not a supplier invoice or forecast of retail listing."
+    },
+    {
+      "label": "robusta",
+      "stage": "roasted",
+      "deal": {
+        "quantity_kg": 20000,
+        "arabica_weight": 0.0,
+        "arabica_usd_kg": 7.277942192059024,
+        "robusta_usd_kg": 3.692900364641118,
+        "usd_irr": 2710000.0,
+        "freight_usd": 4000.0,
+        "insurance_rate": 0.01,
+        "duty_rate": 0.05,
+        "local_cost_irr": 200000000.0,
+        "finance_rate": 0.24,
+        "shrinkage": 0.02,
+        "sale_irr_kg": 30000000.0,
+        "months": 3,
+        "coffee_unfixed": 1.0,
+        "fx_unfixed": 1.0,
+        "roast_yield": 0.84,
+        "roast_cost_irr_input_kg": 500000,
+        "packaging_irr_output_kg": 500000,
+        "selling_cost_irr_output_kg": 1000000,
+        "discount_rate": 0.0,
+        "sold_fraction": 1.0
+      },
+      "cost_toman_kg": 1651445.7841970231,
+      "required_net_price_toman_kg": 2064307.2302462787,
+      "public_fx_cost_toman_kg": 1643471.7935138892,
+      "components": [
+        {
+          "component": "purchase_irr",
+          "total": 20015519976.354862,
+          "per_sellable_kg": 1215714.2842781136,
+          "currency": "toman"
+        },
+        {
+          "component": "freight_irr",
+          "total": 1084000000.0,
+          "per_sellable_kg": 65840.62196307094,
+          "currency": "toman"
+        },
+        {
+          "component": "insurance_irr",
+          "total": 210995199.7635486,
+          "per_sellable_kg": 12815.549062411845,
+          "currency": "toman"
+        },
+        {
+          "component": "duty_irr",
+          "total": 1065525758.8059204,
+          "per_sellable_kg": 64718.52276517982,
+          "currency": "toman"
+        },
+        {
+          "component": "local_irr",
+          "total": 20000000.0,
+          "per_sellable_kg": 1214.7716229348882,
+          "currency": "toman"
+        },
+        {
+          "component": "finance_irr",
+          "total": 1343762456.0954597,
+          "per_sellable_kg": 81618.22498150266,
+          "currency": "toman"
+        },
+        {
+          "component": "roasting_irr",
+          "total": 980000000.0,
+          "per_sellable_kg": 59523.80952380953,
+          "currency": "toman"
+        },
+        {
+          "component": "packaging_irr",
+          "total": 823200000.0,
+          "per_sellable_kg": 50000.0,
+          "currency": "toman"
+        },
+        {
+          "component": "selling_irr",
+          "total": 1646400000.0,
+          "per_sellable_kg": 100000.0,
+          "currency": "toman"
+        }
+      ],
+      "listing_gap_pct": -16.996090460543677,
+      "scope": "Global green monthly benchmark converted to current FX plus assumed costs; not a supplier invoice or forecast of retail listing."
+    },
+    {
+      "label": "blend60_40",
+      "stage": "green",
+      "deal": {
+        "quantity_kg": 20000,
+        "arabica_weight": 0.6,
+        "arabica_usd_kg": 7.277942192059024,
+        "robusta_usd_kg": 3.692900364641118,
+        "usd_irr": 2710000.0,
+        "freight_usd": 4000.0,
+        "insurance_rate": 0.01,
+        "duty_rate": 0.05,
+        "local_cost_irr": 200000000.0,
+        "finance_rate": 0.24,
+        "shrinkage": 0.02,
+        "sale_irr_kg": 30000000.0,
+        "months": 3,
+        "coffee_unfixed": 1.0,
+        "fx_unfixed": 1.0,
+        "roast_yield": 1.0,
+        "roast_cost_irr_input_kg": 0.0,
+        "packaging_irr_output_kg": 0.0,
+        "selling_cost_irr_output_kg": 0.0,
+        "discount_rate": 0.0,
+        "sold_fraction": 1.0
+      },
+      "cost_toman_kg": 1879874.284331041,
+      "required_net_price_toman_kg": 2349842.855413801,
+      "public_fx_cost_toman_kg": 1869475.0630117902,
+      "components": [
+        {
+          "component": "purchase_irr",
+          "total": 31674075999.117897,
+          "per_sellable_kg": 1616024.2856692804,
+          "currency": "toman"
+        },
+        {
+          "component": "freight_irr",
+          "total": 1084000000.0,
+          "per_sellable_kg": 55306.1224489796,
+          "currency": "toman"
+        },
+        {
+          "component": "insurance_irr",
+          "total": 327580759.99117893,
+          "per_sellable_kg": 16713.3040811826,
+          "currency": "toman"
+        },
+        {
+          "component": "duty_irr",
+          "total": 1654282837.9554534,
+          "per_sellable_kg": 84402.18560997212,
+          "currency": "toman"
+        },
+        {
+          "component": "local_irr",
+          "total": 20000000.0,
+          "per_sellable_kg": 1020.4081632653063,
+          "currency": "toman"
+        },
+        {
+          "component": "finance_irr",
+          "total": 2085596375.8238716,
+          "per_sellable_kg": 106407.9783583608,
+          "currency": "toman"
+        },
+        {
+          "component": "roasting_irr",
+          "total": 0.0,
+          "per_sellable_kg": 0.0,
+          "currency": "toman"
+        },
+        {
+          "component": "packaging_irr",
+          "total": 0.0,
+          "per_sellable_kg": 0.0,
+          "currency": "toman"
+        },
+        {
+          "component": "selling_irr",
+          "total": 0.0,
+          "per_sellable_kg": 0.0,
+          "currency": "toman"
+        }
+      ],
+      "listing_gap_pct": null,
+      "scope": "Global green monthly benchmark converted to current FX plus assumed costs; not a supplier invoice or forecast of retail listing."
+    },
+    {
+      "label": "blend60_40",
+      "stage": "roasted",
+      "deal": {
+        "quantity_kg": 20000,
+        "arabica_weight": 0.6,
+        "arabica_usd_kg": 7.277942192059024,
+        "robusta_usd_kg": 3.692900364641118,
+        "usd_irr": 2710000.0,
+        "freight_usd": 4000.0,
+        "insurance_rate": 0.01,
+        "duty_rate": 0.05,
+        "local_cost_irr": 200000000.0,
+        "finance_rate": 0.24,
+        "shrinkage": 0.02,
+        "sale_irr_kg": 30000000.0,
+        "months": 3,
+        "coffee_unfixed": 1.0,
+        "fx_unfixed": 1.0,
+        "roast_yield": 0.84,
+        "roast_cost_irr_input_kg": 500000,
+        "packaging_irr_output_kg": 500000,
+        "selling_cost_irr_output_kg": 1000000,
+        "discount_rate": 0.0,
+        "sold_fraction": 1.0
+      },
+      "cost_toman_kg": 2447469.3861083817,
+      "required_net_price_toman_kg": 3059336.7326354766,
+      "public_fx_cost_toman_kg": 2435089.3607283216,
+      "components": [
+        {
+          "component": "purchase_irr",
+          "total": 31674075999.117897,
+          "per_sellable_kg": 1923838.4353205718,
+          "currency": "toman"
+        },
+        {
+          "component": "freight_irr",
+          "total": 1084000000.0,
+          "per_sellable_kg": 65840.62196307094,
+          "currency": "toman"
+        },
+        {
+          "component": "insurance_irr",
+          "total": 327580759.99117893,
+          "per_sellable_kg": 19896.790572836428,
+          "currency": "toman"
+        },
+        {
+          "component": "duty_irr",
+          "total": 1654282837.9554534,
+          "per_sellable_kg": 100478.79239282395,
+          "currency": "toman"
+        },
+        {
+          "component": "local_irr",
+          "total": 20000000.0,
+          "per_sellable_kg": 1214.7716229348882,
+          "currency": "toman"
+        },
+        {
+          "component": "finance_irr",
+          "total": 2085596375.8238716,
+          "per_sellable_kg": 126676.16471233428,
+          "currency": "toman"
+        },
+        {
+          "component": "roasting_irr",
+          "total": 980000000.0,
+          "per_sellable_kg": 59523.80952380953,
+          "currency": "toman"
+        },
+        {
+          "component": "packaging_irr",
+          "total": 823200000.0,
+          "per_sellable_kg": 50000.0,
+          "currency": "toman"
+        },
+        {
+          "component": "selling_irr",
+          "total": 1646400000.0,
+          "per_sellable_kg": 100000.0,
+          "currency": "toman"
+        }
+      ],
+      "listing_gap_pct": 171.94104290093125,
+      "scope": "Global green monthly benchmark converted to current FX plus assumed costs; not a supplier invoice or forecast of retail listing."
+    }
+  ],
+  "retrospective": {
+    "native_train24_q95": {
+      "summary": {
+        "block": {
+          "origins": 32,
+          "breaches": 6,
+          "breach_rate": 0.1875,
+          "consecutive_breach_pairs": 0,
+          "mean_quantile_loss": 1188.3897569863743
+        },
+        "ewma_block": {
+          "origins": 32,
+          "breaches": 4,
+          "breach_rate": 0.125,
+          "consecutive_breach_pairs": 0,
+          "mean_quantile_loss": 1106.704694525001
+        },
+        "gbm": {
+          "origins": 32,
+          "breaches": 6,
+          "breach_rate": 0.1875,
+          "consecutive_breach_pairs": 2,
+          "mean_quantile_loss": 839.8044436878129
+        },
+        "historical": {
+          "origins": 32,
+          "breaches": 6,
+          "breach_rate": 0.1875,
+          "consecutive_breach_pairs": 0,
+          "mean_quantile_loss": 1181.1619523451814
+        },
+        "student_t": {
+          "origins": 32,
+          "breaches": 5,
+          "breach_rate": 0.15625,
+          "consecutive_breach_pairs": 1,
+          "mean_quantile_loss": 884.0663383897902
+        }
+      },
+      "paired_loss": {
+        "block": {
+          "mean_loss_difference": 348.5853132985615,
+          "resampled_p025_p975": [
+            160.17143112252498,
+            542.1276496233824
+          ],
+          "origins": 32,
+          "interpretation": "Positive means worse than GBM. Exploratory block-resampling range, not independent holdout evidence."
+        },
+        "ewma_block": {
+          "mean_loss_difference": 266.90025083718814,
+          "resampled_p025_p975": [
+            31.388324313637373,
+            487.4748375919693
+          ],
+          "origins": 32,
+          "interpretation": "Positive means worse than GBM. Exploratory block-resampling range, not independent holdout evidence."
+        },
+        "historical": {
+          "mean_loss_difference": 341.3575086573684,
+          "resampled_p025_p975": [
+            159.46336460921262,
+            525.8991625080877
+          ],
+          "origins": 32,
+          "interpretation": "Positive means worse than GBM. Exploratory block-resampling range, not independent holdout evidence."
+        },
+        "student_t": {
+          "mean_loss_difference": 44.26189470197735,
+          "resampled_p025_p975": [
+            -17.0899486556392,
+            125.897408663297
+          ],
+          "origins": 32,
+          "interpretation": "Positive means worse than GBM. Exploratory block-resampling range, not independent holdout evidence."
+        }
+      },
+      "mean_excess_over_var": {
+        "block": 2833.1373254687446,
+        "ewma_block": 1679.0273986362809,
+        "gbm": 1367.11619312182,
+        "historical": 2833.1373254687423,
+        "student_t": 2068.433403655336
+      }
+    },
+    "native_train36_q95": {
+      "summary": {
+        "block": {
+          "origins": 28,
+          "breaches": 4,
+          "breach_rate": 0.14285714285714285,
+          "consecutive_breach_pairs": 0,
+          "mean_quantile_loss": 1098.6418928513444
+        },
+        "ewma_block": {
+          "origins": 28,
+          "breaches": 3,
+          "breach_rate": 0.10714285714285714,
+          "consecutive_breach_pairs": 0,
+          "mean_quantile_loss": 1302.267750849204
+        },
+        "gbm": {
+          "origins": 28,
+          "breaches": 6,
+          "breach_rate": 0.21428571428571427,
+          "consecutive_breach_pairs": 2,
+          "mean_quantile_loss": 1000.8849990980135
+        },
+        "historical": {
+          "origins": 28,
+          "breaches": 5,
+          "breach_rate": 0.17857142857142858,
+          "consecutive_breach_pairs": 1,
+          "mean_quantile_loss": 1170.216270007137
+        },
+        "student_t": {
+          "origins": 28,
+          "breaches": 5,
+          "breach_rate": 0.17857142857142858,
+          "consecutive_breach_pairs": 1,
+          "mean_quantile_loss": 1022.7663692275422
+        }
+      },
+      "paired_loss": {
+        "block": {
+          "mean_loss_difference": 97.75689375333077,
+          "resampled_p025_p975": [
+            -263.064104560464,
+            320.04432852231827
+          ],
+          "origins": 28,
+          "interpretation": "Positive means worse than GBM. Exploratory block-resampling range, not independent holdout evidence."
+        },
+        "ewma_block": {
+          "mean_loss_difference": 301.3827517511906,
+          "resampled_p025_p975": [
+            79.05233944647132,
+            451.7121990618231
+          ],
+          "origins": 28,
+          "interpretation": "Positive means worse than GBM. Exploratory block-resampling range, not independent holdout evidence."
+        },
+        "historical": {
+          "mean_loss_difference": 169.33127090912333,
+          "resampled_p025_p975": [
+            -221.3499264930579,
+            409.00849787407253
+          ],
+          "origins": 28,
+          "interpretation": "Positive means worse than GBM. Exploratory block-resampling range, not independent holdout evidence."
+        },
+        "student_t": {
+          "mean_loss_difference": 21.881370129528673,
+          "resampled_p025_p975": [
+            -34.72716211550535,
+            91.5653406595061
+          ],
+          "origins": 28,
+          "interpretation": "Positive means worse than GBM. Exploratory block-resampling range, not independent holdout evidence."
+        }
+      },
+      "mean_excess_over_var": {
+        "block": 2328.035069424084,
+        "ewma_block": 3683.0854150826417,
+        "gbm": 1811.0432119252157,
+        "historical": 2604.8070724422214,
+        "student_t": 2440.5425292490613
+      }
+    },
+    "native_train60_q95": {
+      "summary": {
+        "block": {
+          "origins": 20,
+          "breaches": 1,
+          "breach_rate": 0.05,
+          "consecutive_breach_pairs": 0,
+          "mean_quantile_loss": 1023.80541453716
+        },
+        "ewma_block": {
+          "origins": 20,
+          "breaches": 1,
+          "breach_rate": 0.05,
+          "consecutive_breach_pairs": 0,
+          "mean_quantile_loss": 1231.3607946710063
+        },
+        "gbm": {
+          "origins": 20,
+          "breaches": 2,
+          "breach_rate": 0.1,
+          "consecutive_breach_pairs": 0,
+          "mean_quantile_loss": 1051.125434276929
+        },
+        "historical": {
+          "origins": 20,
+          "breaches": 1,
+          "breach_rate": 0.05,
+          "consecutive_breach_pairs": 0,
+          "mean_quantile_loss": 1029.2258232886825
+        },
+        "student_t": {
+          "origins": 20,
+          "breaches": 2,
+          "breach_rate": 0.1,
+          "consecutive_breach_pairs": 0,
+          "mean_quantile_loss": 1068.716631506014
+        }
+      },
+      "paired_loss": {
+        "block": {
+          "mean_loss_difference": -27.320019739769016,
+          "resampled_p025_p975": [
+            -412.7768719173759,
+            259.08051656632455
+          ],
+          "origins": 20,
+          "interpretation": "Positive means worse than GBM. Exploratory block-resampling range, not independent holdout evidence."
+        },
+        "ewma_block": {
+          "mean_loss_difference": 180.23536039407722,
+          "resampled_p025_p975": [
+            -389.70798519718255,
+            671.1152677014326
+          ],
+          "origins": 20,
+          "interpretation": "Positive means worse than GBM. Exploratory block-resampling range, not independent holdout evidence."
+        },
+        "historical": {
+          "mean_loss_difference": -21.899610988246554,
+          "resampled_p025_p975": [
+            -292.2023108253615,
+            232.12318846233327
+          ],
+          "origins": 20,
+          "interpretation": "Positive means worse than GBM. Exploratory block-resampling range, not independent holdout evidence."
+        },
+        "student_t": {
+          "mean_loss_difference": 17.59119722908481,
+          "resampled_p025_p975": [
+            -35.22050143305067,
+            66.02639415402403
+          ],
+          "origins": 20,
+          "interpretation": "Positive means worse than GBM. Exploratory block-resampling range, not independent holdout evidence."
+        }
+      },
+      "mean_excess_over_var": {
+        "block": 1887.8506692748779,
+        "ewma_block": 426.0807234798849,
+        "gbm": 3289.757525032377,
+        "historical": 2594.3032768339326,
+        "student_t": 3766.5160250363897
+      }
+    },
+    "zero_log_train24_q95": {
+      "summary": {
+        "block": {
+          "origins": 32,
+          "breaches": 9,
+          "breach_rate": 0.28125,
+          "consecutive_breach_pairs": 3,
+          "mean_quantile_loss": 1240.5433922151858
+        },
+        "ewma_block": {
+          "origins": 32,
+          "breaches": 6,
+          "breach_rate": 0.1875,
+          "consecutive_breach_pairs": 2,
+          "mean_quantile_loss": 1232.5872959689227
+        },
+        "gbm": {
+          "origins": 32,
+          "breaches": 3,
+          "breach_rate": 0.09375,
+          "consecutive_breach_pairs": 0,
+          "mean_quantile_loss": 827.4261917166615
+        },
+        "historical": {
+          "origins": 32,
+          "breaches": 9,
+          "breach_rate": 0.28125,
+          "consecutive_breach_pairs": 3,
+          "mean_quantile_loss": 1240.5433922151867
+        },
+        "student_t": {
+          "origins": 32,
+          "breaches": 4,
+          "breach_rate": 0.125,
+          "consecutive_breach_pairs": 1,
+          "mean_quantile_loss": 862.0860220337445
+        }
+      },
+      "paired_loss": {
+        "block": {
+          "mean_loss_difference": 413.1172004985242,
+          "resampled_p025_p975": [
+            34.898331325138415,
+            868.465029226467
+          ],
+          "origins": 32,
+          "interpretation": "Positive means worse than GBM. Exploratory block-resampling range, not independent holdout evidence."
+        },
+        "ewma_block": {
+          "mean_loss_difference": 405.16110425226105,
+          "resampled_p025_p975": [
+            57.58169453795632,
+            842.5661457736757
+          ],
+          "origins": 32,
+          "interpretation": "Positive means worse than GBM. Exploratory block-resampling range, not independent holdout evidence."
+        },
+        "historical": {
+          "mean_loss_difference": 413.1172004985251,
+          "resampled_p025_p975": [
+            23.68045202909511,
+            868.3911267168169
+          ],
+          "origins": 32,
+          "interpretation": "Positive means worse than GBM. Exploratory block-resampling range, not independent holdout evidence."
+        },
+        "student_t": {
+          "mean_loss_difference": 34.659830317082886,
+          "resampled_p025_p975": [
+            -18.58055656809254,
+            105.90816732261337
+          ],
+          "origins": 32,
+          "interpretation": "Positive means worse than GBM. Exploratory block-resampling range, not independent holdout evidence."
+        }
+      },
+      "mean_excess_over_var": {
+        "block": 2760.223291162783,
+        "ewma_block": 3104.346543846759,
+        "gbm": 2317.0370564727396,
+        "historical": 2760.223291162788,
+        "student_t": 2185.807780630114
+      }
+    },
+    "zero_log_train36_q95": {
+      "summary": {
+        "block": {
+          "origins": 28,
+          "breaches": 5,
+          "breach_rate": 0.17857142857142858,
+          "consecutive_breach_pairs": 1,
+          "mean_quantile_loss": 1073.179953053295
+        },
+        "ewma_block": {
+          "origins": 28,
+          "breaches": 5,
+          "breach_rate": 0.17857142857142858,
+          "consecutive_breach_pairs": 2,
+          "mean_quantile_loss": 1165.310908347439
+        },
+        "gbm": {
+          "origins": 28,
+          "breaches": 5,
+          "breach_rate": 0.17857142857142858,
+          "consecutive_breach_pairs": 1,
+          "mean_quantile_loss": 973.2346461208433
+        },
+        "historical": {
+          "origins": 28,
+          "breaches": 5,
+          "breach_rate": 0.17857142857142858,
+          "consecutive_breach_pairs": 1,
+          "mean_quantile_loss": 1073.1799530532946
+        },
+        "student_t": {
+          "origins": 28,
+          "breaches": 5,
+          "breach_rate": 0.17857142857142858,
+          "consecutive_breach_pairs": 1,
+          "mean_quantile_loss": 999.0724276399012
+        }
+      },
+      "paired_loss": {
+        "block": {
+          "mean_loss_difference": 99.9453069324517,
+          "resampled_p025_p975": [
+            -76.98098301999212,
+            341.11555717385454
+          ],
+          "origins": 28,
+          "interpretation": "Positive means worse than GBM. Exploratory block-resampling range, not independent holdout evidence."
+        },
+        "ewma_block": {
+          "mean_loss_difference": 192.07626222659567,
+          "resampled_p025_p975": [
+            -76.50709828961028,
+            524.042754589988
+          ],
+          "origins": 28,
+          "interpretation": "Positive means worse than GBM. Exploratory block-resampling range, not independent holdout evidence."
+        },
+        "historical": {
+          "mean_loss_difference": 99.94530693245142,
+          "resampled_p025_p975": [
+            -91.26078903626586,
+            341.77773667700063
+          ],
+          "origins": 28,
+          "interpretation": "Positive means worse than GBM. Exploratory block-resampling range, not independent holdout evidence."
+        },
+        "student_t": {
+          "mean_loss_difference": 25.837781519057906,
+          "resampled_p025_p975": [
+            -28.68555885173497,
+            94.04462650272662
+          ],
+          "origins": 28,
+          "interpretation": "Positive means worse than GBM. Exploratory block-resampling range, not independent holdout evidence."
+        }
+      },
+      "mean_excess_over_var": {
+        "block": 2722.60915028312,
+        "ewma_block": 2912.958289540968,
+        "gbm": 1860.6538305132024,
+        "historical": 2722.60915028312,
+        "student_t": 2140.8167147628055
+      }
+    },
+    "zero_log_train60_q95": {
+      "summary": {
+        "block": {
+          "origins": 20,
+          "breaches": 3,
+          "breach_rate": 0.15,
+          "consecutive_breach_pairs": 0,
+          "mean_quantile_loss": 985.9699697954572
+        },
+        "ewma_block": {
+          "origins": 20,
+          "breaches": 1,
+          "breach_rate": 0.05,
+          "consecutive_breach_pairs": 0,
+          "mean_quantile_loss": 1129.3420406368
+        },
+        "gbm": {
+          "origins": 20,
+          "breaches": 2,
+          "breach_rate": 0.1,
+          "consecutive_breach_pairs": 0,
+          "mean_quantile_loss": 1045.483421355046
+        },
+        "historical": {
+          "origins": 20,
+          "breaches": 3,
+          "breach_rate": 0.15,
+          "consecutive_breach_pairs": 0,
+          "mean_quantile_loss": 985.9699697954584
+        },
+        "student_t": {
+          "origins": 20,
+          "breaches": 2,
+          "breach_rate": 0.1,
+          "consecutive_breach_pairs": 0,
+          "mean_quantile_loss": 1061.0990566229978
+        }
+      },
+      "paired_loss": {
+        "block": {
+          "mean_loss_difference": -59.51345155958872,
+          "resampled_p025_p975": [
+            -113.096035062418,
+            17.38796784659546
+          ],
+          "origins": 20,
+          "interpretation": "Positive means worse than GBM. Exploratory block-resampling range, not independent holdout evidence."
+        },
+        "ewma_block": {
+          "mean_loss_difference": 83.85861928175407,
+          "resampled_p025_p975": [
+            -48.282858672248864,
+            275.55765509518466
+          ],
+          "origins": 20,
+          "interpretation": "Positive means worse than GBM. Exploratory block-resampling range, not independent holdout evidence."
+        },
+        "historical": {
+          "mean_loss_difference": -59.513451559587665,
+          "resampled_p025_p975": [
+            -110.89485914328355,
+            17.16806173748506
+          ],
+          "origins": 20,
+          "interpretation": "Positive means worse than GBM. Exploratory block-resampling range, not independent holdout evidence."
+        },
+        "student_t": {
+          "mean_loss_difference": 15.615635267951642,
+          "resampled_p025_p975": [
+            -34.70808951597427,
+            61.323013260360526
+          ],
+          "origins": 20,
+          "interpretation": "Positive means worse than GBM. Exploratory block-resampling range, not independent holdout evidence."
+        }
+      },
+      "mean_excess_over_var": {
+        "block": 1759.2545161528299,
+        "ewma_block": 4080.617836284713,
+        "gbm": 2936.7949784854045,
+        "historical": 1759.2545161528396,
+        "student_t": 3389.4624073080686
+      }
+    }
+  },
+  "historical_reconstruction": {
+    "reference_day": "2025-12-01",
+    "coffee_benchmark_month": "2025-10-01",
+    "coffee_prices": {
+      "arabica_usd_kg": 8.902103196657654,
+      "robusta_usd_kg": 4.741261410547977
+    },
+    "fx_irr_per_usd": 1190750,
+    "fx_source": "https://t.me/s/tgjunews?before=703103",
+    "fx_source_time": "1404/09/10 18:31",
+    "local_green_listing_source": "https://eridocoffee.com/raw-coffee-beans-purchase/",
+    "local_listing_date": "1404/09/10",
+    "local_prices_toman_kg": {
+      "brazil_santos": 960000,
+      "vietnam_robusta_screen18": 685000
+    },
+    "computed_blend_green_cost_toman_kg": 1016987.7878317758,
+    "scope": "Retrospective reconstruction, different origins/grades from IMF Other Mild Arabica; no claim of matched invoice or point-in-time vintage backtest. Costs remain illustrative."
+  },
+  "last_observed_historical_target": [
+    {
+      "origin": "2026-06-01",
+      "target": "2026-09-01",
+      "method": "gbm",
+      "realized_loss": 5566.2311956438,
+      "var_irr": 26623.470916429,
+      "cvar_irr": 34255.7732907727,
+      "breach": false,
+      "quantile_loss": 1052.8619860393,
+      "excess_over_var": 0.0,
+      "loss_minus_cvar": -28689.5420951288,
+      "growth_policy": "zero_log"
+    },
+    {
+      "origin": "2026-06-01",
+      "target": "2026-09-01",
+      "method": "block",
+      "realized_loss": 5566.2311956438,
+      "var_irr": 29366.6102028654,
+      "cvar_irr": 30904.7537917294,
+      "breach": false,
+      "quantile_loss": 1190.0189503611,
+      "excess_over_var": 0.0,
+      "loss_minus_cvar": -25338.5225960856,
+      "growth_policy": "zero_log"
+    },
+    {
+      "origin": "2026-06-01",
+      "target": "2026-09-01",
+      "method": "ewma_block",
+      "realized_loss": 5566.2311956438,
+      "var_irr": 36110.418525956,
+      "cvar_irr": 36110.418525956,
+      "breach": false,
+      "quantile_loss": 1527.2093665156,
+      "excess_over_var": 0.0,
+      "loss_minus_cvar": -30544.1873303122,
+      "growth_policy": "zero_log"
+    },
+    {
+      "origin": "2026-06-01",
+      "target": "2026-09-01",
+      "method": "student_t",
+      "realized_loss": 5566.2311956438,
+      "var_irr": 26855.4327676708,
+      "cvar_irr": 35884.963715714,
+      "breach": false,
+      "quantile_loss": 1064.4600786013,
+      "excess_over_var": 0.0,
+      "loss_minus_cvar": -30318.7325200701,
+      "growth_policy": "zero_log"
+    },
+    {
+      "origin": "2026-06-01",
+      "target": "2026-09-01",
+      "method": "historical",
+      "realized_loss": 5566.2311956438,
+      "var_irr": 29366.6102028654,
+      "cvar_irr": 30904.7537917294,
+      "breach": false,
+      "quantile_loss": 1190.0189503611,
+      "excess_over_var": 0.0,
+      "loss_minus_cvar": -25338.5225960856,
+      "growth_policy": "zero_log"
+    }
+  ],
+  "forecast_registration": {
+    "record_id": "984aba7933e7990e8c91b0db3fac43c9fef874f6316dffb3421c1a30c650f1e3",
+    "registered_at": "2026-10-27T19:11:39.946247+00:00",
+    "target_month": "2027-01-01",
+    "status": "unsettled",
+    "prior_record_retained": "b6503b0c5be8772abe59518110024beaec782f1a9f815f338e4f438b65bae736"
+  },
+  "current_risk_fixed_fx": {
+    "gbm": {
+      "var_irr": 62593531806.02092,
+      "cvar_irr": 80306900272.35329
+    },
+    "historical": {
+      "var_irr": 60449208097.842224,
+      "cvar_irr": 77581442068.84448
+    },
+    "block": {
+      "var_irr": 60449208097.842224,
+      "cvar_irr": 77581442068.84448
+    },
+    "ewma_block": {
+      "var_irr": 89474832223.6568,
+      "cvar_irr": 104144311054.2037
+    },
+    "student_t": {
+      "var_irr": 61336977915.857185,
+      "cvar_irr": 83279504445.47076
+    }
+  },
+  "retrospective_cost_unit": "USD",
+  "case_cost_unit": "IRR internally, displayed as toman/kg",
+  "actual_invoice_verification": "not possible: no invoice or settlement receipts supplied",
+  "software_validation": {
+    "automated_tests": 68,
+    "failures": 0,
+    "skips": 0,
+    "actual_history_ui_engines": 5,
+    "audit_replay_exact": true,
+    "manual_browser_visual_check": false
+  }
+}
